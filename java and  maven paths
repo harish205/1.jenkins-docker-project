@@ -1,0 +1,15 @@
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin
+
+or 
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+
+maven path seeting
+
+export M2_HOME=/usr/share/maven
+export PATH=/usr/share/maven/bin
+or
+export PATH=$PATH:$M2_HOME/bin
+
+update-alternatives: using /usr/share/maven/bin/mvn to provide /usr/bin/mvn (mvn) in auto mode
