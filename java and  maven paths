@@ -1,15 +1,39 @@
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export PATH=/usr/lib/jvm/java-8-openjdk-amd64/bin
+under user:
+vi .bashrc ------ last
 
-or 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
 
 maven path seeting
 
 export M2_HOME=/usr/share/maven
-export PATH=/usr/share/maven/bin
+export M2_HOME=/usr/share/maven/bin
 or
 export PATH=$PATH:$M2_HOME/bin
 
+1.MAVEN download required version in /opt in formate-->.tar.gz 
+2.cd /opt# wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+ now extract to req directory ie 
+ 3.tar -xvf apache-maven-3.6.3-bin.tar.gz -C (C indicates change directory before extract) /usr/share (default maven path: /usr/share)
+
+
+Step 4: Setup environment variables
+Next, you will need to setup the environment variables such as M2_HOME, M2, MAVEN_OPTS, and PATH. You can do this by creating a mavenenv.sh file inside of the /etc/profile.d/ directory.
+
+sudo nano /etc/profile.d/mavenenv.sh
+Add the following lines:
+
+export M2_HOME=/usr/share/apache-maven-3.6.3
+export PATH=$PATH:$M2_HOME/bin
+
+Save and close the file, update its permissions, then load the environment variables with the following command:
+
+sudo chmod +x /etc/profile.d/mavenenv.sh
+sudo source /etc/profile.d/mavenenv.sh
+
+now check mvn --version
+
+
 update-alternatives: using /usr/share/maven/bin/mvn to provide /usr/bin/mvn (mvn) in auto mode
+
+to check $PATH storage place is >>>>cd /etc/environment# ls
